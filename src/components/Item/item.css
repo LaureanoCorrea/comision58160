@@ -1,0 +1,54 @@
+/* item.css */
+
+/* Contenedor que envuelve todas las tarjetas */
+.item-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias filas si no caben en la pantalla */
+  gap: 20px;
+  color: #ddd;
+}
+
+.item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  width: 300px; /* Ancho de cada tarjeta */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-color: #4c4848;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.item h1 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.item img {
+  width: 100%;
+  max-height: 200px;
+}
+
+.item h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.item a {
+  display: block;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.item a:hover {
+  background-color: #0056b3;
+}

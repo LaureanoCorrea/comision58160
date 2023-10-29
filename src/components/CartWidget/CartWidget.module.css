@@ -1,0 +1,19 @@
+/* CartWidget.module.css */
+.cartButton {
+    background: none;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.cartImage {
+    width: 30px; /* Ajusta el ancho de la imagen según tus preferencias */
+    margin-right: 5px; /* Ajusta el margen derecho según tus preferencias */
+}
+
+.cartCount {
+    font-weight: bold;
+    font-size: 18px; /* Ajusta el tamaño de fuente según tus preferencias */
+}
