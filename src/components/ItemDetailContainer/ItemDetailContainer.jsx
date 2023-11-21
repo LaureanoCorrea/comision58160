@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
     }
 
     if(!product) {
-        return <h1>El producto no existe</h1>
+        return <h1>No Hay Productos</h1>
     }
 
     return (

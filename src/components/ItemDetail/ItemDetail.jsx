@@ -103,7 +103,7 @@ const ItemDetail = ({ id, name, category, img, price, stock, description }) => {
             style={{
               width: "60%",
               boxShadow: "4px 4px 1px 0px rgba(0, 0, 0, 0.1)",
-              borderRadius: "20px",
+              borderRadius: "21px",
               marginBottom: "20px",
             }}
             />

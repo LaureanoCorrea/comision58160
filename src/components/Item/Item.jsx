@@ -5,7 +5,6 @@ const Item = ({ id, name, img, price }) => {
 
     const handleClick = (e) => {
         e.stopPropagation()
-        console.log('click en item')
     }
 
     return (
