@@ -40,3 +40,9 @@
 .button:hover {
   background-color: #1c501e;
 }
+
+.errorText {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px; 
+}

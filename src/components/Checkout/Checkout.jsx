@@ -45,34 +45,38 @@ const Checkout = () => {
 
       const { docs } = await getDocs(productsRef);
 
-      docs.forEach(async (documentnapshot) => {
-        const fields = documentnapshot.data();
-        const stockDb = fields.stock;
+      await Promise.all(
+        docs.map(async (documentSnapshot) => {
+          const fields = documentSnapshot.data();
+          const stockDb = fields.stock;
 
-        const productAddedToCart = cart.find(
-          (prod) => prod.id === documentnapshot.id
-        );
-        const prodQuantity = productAddedToCart.quantity;
+          const productAddedToCart = cart.find(
+            (prod) => prod.id === documentSnapshot.id
+          );
+          const prodQuantity = productAddedToCart.quantity;
 
-        if (stockDb >= prodQuantity) {
-          batch.update(documentnapshot.ref, { stock: stockDb - prodQuantity });
-        } else {
-          outOfStock.push({ id: documentnapshot.id, ...fields });
-        }
+          if (stockDb >= prodQuantity) {
+            batch.update(documentSnapshot.ref, {
+              stock: stockDb - prodQuantity,
+            });
+          } else {
+            outOfStock.push({ id: documentSnapshot.id, ...fields });
+          }
+        })
+      );
 
-        if (outOfStock.length === 0) {
-          const ordersRef = collection(db, "orders");
-
-          const { id } = await addDoc(ordersRef, objOrder);
-          batch.commit();
-          clearCart();
-          setOrderId(id);
-        } else {
-          console.log("no hay stock");
-        }
-      });
+      if (outOfStock.length === 0) {
+        const ordersRef = collection(db, "orders");
+        const { id } = await addDoc(ordersRef, objOrder);
+        batch.commit();
+        clearCart();
+        setOrderId(id);
+      } else {
+        console.log("Algunos productos están fuera de stock:", outOfStock);
+      }
     } catch (error) {
-      console.error("error generando la orden");
+      console.error("Error generando la orden:", error.message);
+      // Puedes mostrar un mensaje al usuario indicando que ocurrió un error
     } finally {
       setLoading(false);
     }
