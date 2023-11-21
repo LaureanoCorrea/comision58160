@@ -1,18 +1,14 @@
 import { useState } from "react"
 
-export const useCount = ({ stock, onAdd}) => {
-    const [count, setCount] = useState(1)
+export const useCount = (initial = 0) => {
+    const [count, setCount] = useState(initial)
 
     const decrement = () => {
-        if(count > 1){
-            setCount(prev => prev -1)
-        }
+        setCount(old => old - 1)
     }
 
     const increment = () => {
-        if(count < stock){
-            setCount(prev => prev + 1)
-        }
+        setCount(old => old + 1)
     }
 
     return {

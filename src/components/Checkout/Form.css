@@ -1,0 +1,43 @@
+
+.containerForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 67px;
+}
+
+.Form {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.Label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.Input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 1px 10px 1px 10px;
+}
+
+.button:hover {
+  background-color: #1c501e;
+}
+

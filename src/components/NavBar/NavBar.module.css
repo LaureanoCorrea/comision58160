@@ -1,30 +1,43 @@
 .container {
-    background-color: #333;
-    color: #fff;
+    background-color: #f1f1f175;
+    color: #000000;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 10px 20px;
-    margin: 1px;
+    margin-top: 1px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container a {
+    border: solid 1px rgb(4, 0, 255)(76, 0, 255);
+    margin: 1px 13px 1px 13px;
+    text-decoration: none;
+    background-color: azure;
+    border-radius: 15PX;
+    padding: 7px;
 }
 
 h1 {
     cursor: pointer;
-    font-size: 24px;
+    font-size: 12px;
+    text-align: center;
+    margin: 20px 1px 20px 1px;
 }
 
 .navLinks {
-    display: flex;
-    gap: 20px;
+    display: block;
+    gap: 50px;
 }
 
 .navLinks a {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     margin: 30px;
-    font-size: 16px;
+    font-size: 10px;
 }
 
 .active {
-    font-weight: bold;
+    color: red ;
 }

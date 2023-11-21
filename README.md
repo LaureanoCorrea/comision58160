@@ -1,8 +1,28 @@
-# React + Vite
+# Sembradores
+## _Aplicacion de prueba comision 58160_
+Creada a partir de curso React, CoderHouse. Online-storage,
+- Tienda de Productos
+- Integracion Vercel
+- Uso de Firebase
+> Ecommerce simple
+> creado con React
+## Instalacion Local
+Instalar las dependencias e inicia el servidor.
+```sh
+$ git clone https://github.com/LaureanoCorrea/segundaEntregaReact.git
+$ cd sembradores
+$ npm install
+$ npm run dev
+```
+## Creado usando 
+```sh
+create-React-App
+```
+```sh
+Firebase
+```
+#### Test App
+[Deploy](https://breakdance.github.io/breakdance/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prueba de uso
+![ shopping demo ](./src/images/shop.gif) 

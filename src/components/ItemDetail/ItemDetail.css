@@ -1,8 +1,9 @@
-/* ItemDetail.css */
 .itemDetailContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     height: 100vh; /* Ajusta la altura al 100% del viewport */
     background: rgba(0, 0, 0, 0.5); /* Fondo difuminado con opacidad */
     position: fixed;
@@ -14,9 +15,28 @@
 }
 
 .itemDetailContent {
-    background: white; /* Fondo blanco para el contenido */
+    background: #ffffff; 
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
-    max-width: 600px; /* Ajusta el ancho máximo según tus preferencias */
+    max-width: 600px; 
 }
+
+.addBox{
+    display: flex;
+    align-items: baseline;
+    font-weight: 700;
+}
+
+.negrita {
+    font-weight: 700;
+}
+
+.h2{
+    text-align: center;
+}
+
+.big{
+    font-size: 1.5rem;
+}
+

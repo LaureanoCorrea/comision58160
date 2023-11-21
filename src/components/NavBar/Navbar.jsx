@@ -1,21 +1,39 @@
-import classes from './Navbar.module.css'
-import CartWidget from "../CartWidget/CartWidget"
-import { NavLink, useNavigate } from 'react-router-dom'
+import classes from "./Navbar.module.css";
+import CartWidget from "../CartWidget/CartWidget";
+import { NavLink, useNavigate } from "react-router-dom";
+import { db } from '../../services/firebase/firebaseConfig'
+import { getDocs, collection, query, orderBy } from "firebase/firestore";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
-    const navigate = useNavigate()
+  const [categories, setCategories] = useState([])
+  const navigate = useNavigate();
 
-    return (
-        <nav className={classes.container}>
-            <h1 onClick={() => navigate('/')}>Sembradores</h1>
-            <section className='{classes.navLinks}'>
-                <NavLink to='/category/perfumes' className={({ isActive }) => isActive ? classes.active : ''}>Perfumes</NavLink>
-                <NavLink to='/category/cremas' className={({ isActive }) => isActive ? classes.active : ''}>Cremas</NavLink>
-                <NavLink to='/category/aceites' className={({ isActive }) => isActive ? classes.active : ''}>Aceites</NavLink>
-            </section>
-            <CartWidget />
-        </nav>
-    )
-} 
+useEffect(() =>{
+  const categoriesRef = query(collection(db, 'categories'), orderBy('order'))
 
-export default Navbar
+  getDocs(categoriesRef)
+    .then(querySnapshot => {
+      const categoriesAdapted = querySnapshot.docs.map(doc => {
+        const fields = doc.data()
+        return { id: doc.id, ...fields}
+      })
+
+    setCategories(categoriesAdapted)
+  })
+}, [])
+
+  return (
+    <nav className={classes.container}>
+      <h1 onClick={() => navigate("/")}>Sembradores</h1>
+      <div className="{classes.navLinks}">
+        {
+          categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.slug}`} className={({ isActive }) => isActive ? classes.active : ''}> {cat.name}</NavLink>)
+        }
+      </div>
+      <CartWidget />
+    </nav>
+  );
+};
+
+export default Navbar;
