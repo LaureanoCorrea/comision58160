@@ -1,5 +1,5 @@
 import Checkout from './components/Checkout/Checkout'
-import NavBar from '../src/components/NavBar/NavBar'
+import NavBar from './components/NavBar/Navbar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart'
