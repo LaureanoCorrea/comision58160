@@ -22,7 +22,7 @@ create-React-App
 Firebase
 ```
 #### Test App
-[Deploy](https://breakdance.github.io/breakdance/)
+[Deploy](https://comision58160-mi6vux7sx-laureanos-projects.vercel.app/)
 
 ## Prueba de uso
 ![ shopping demo ](./src/images/shop.gif) 
