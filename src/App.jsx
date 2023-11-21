@@ -1,5 +1,5 @@
 import Checkout from './components/Checkout/Checkout'
-import Navbar from './components/NavBar/Navbar'
+import NavBar from '../src/components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart'
@@ -15,7 +15,7 @@ const App = () => {
       <NotificationProvider>
         <CartProvider>
           <BrowserRouter>
-            <Navbar />
+            <NavBar />
             <Routes>
               <Route path='/' element={<ItemListContainer greeting={'Listado de productos'}/>}/>
               <Route path='/category/:categoryId' element={<ItemListContainer greeting={'Productos filtrados por categoria'}/>}/>

@@ -1,11 +1,11 @@
-import classes from "./Navbar.module.css";
+import classes from "./NavBar.module.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { NavLink, useNavigate } from "react-router-dom";
 import { db } from '../../services/firebase/firebaseConfig'
 import { getDocs, collection, query, orderBy } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
-const Navbar = () => {
+const NavBar = () => {
   const [categories, setCategories] = useState([])
   const navigate = useNavigate();
 
@@ -36,4 +36,4 @@ useEffect(() =>{
   );
 };
 
-export default Navbar;
+export default NavBar;
